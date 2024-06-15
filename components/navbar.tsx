@@ -5,30 +5,29 @@ import DarkMode from '@/assets/icons/DarkMode';
 
 export default function Navbar() {
   return (
-    <nav className="bg-white">
+    <nav className="border-b bg-white">
       <div className="flex h-16 items-center justify-between px-2">
-        <h1 className="text-teal text-3xl font-bold">
+        <h1 className="text-teal text-3xl font-extrabold">
           <Link href="/">sway3-dev</Link>
         </h1>
-        <div className="flex items-center space-x-1">
-          <div className="mr-3">
+        <div className="flex items-center">
+          <div className="border-r">
             <Link href="/" className="rounded-md px-3 py-2 hover:bg-gray-200">
               Home
             </Link>
             <Link href="/about" className="rounded-md px-3 py-2 hover:bg-gray-200">
               About me
             </Link>
-            <Link href="/blog" className="rounded-md px-3 py-2 hover:bg-gray-200">
+            <Link href="/blog" className="mr-2 rounded-md px-3 py-2 hover:bg-gray-200">
               Blog
             </Link>
           </div>
-          <div className="h-6 border-l-2 border-gray-300" />
-          <div className="flex items-center pl-2">
+          <div className="ml-2 flex items-center">
             <Link href="https://github.com/sway3" target="_blank" className="px-3 py-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 496 512"
-                className="h-8 w-8 fill-current text-gray-400 hover:text-gray-700"
+                className="h-7 w-7 fill-current text-gray-400 hover:text-gray-700"
               >
                 <GithubIcon />
               </svg>
