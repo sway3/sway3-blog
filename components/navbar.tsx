@@ -1,24 +1,38 @@
+'use client';
+
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import '../app/globals.css';
 import GithubIcon from '@/assets/icons/GithubIcon';
 import DarkMode from '@/assets/icons/DarkMode';
 
 export default function Navbar() {
+  const pathname = usePathname();
+  console.log(pathname);
   return (
     <nav className="border-b bg-white">
       <div className="flex h-16 items-center justify-between px-2">
-        <h1 className="text-teal text-3xl font-extrabold">
+        <h1 className="text-3xl font-extrabold text-teal">
           <Link href="/">sway3-dev</Link>
         </h1>
         <div className="flex items-center">
           <div className="border-r">
-            <Link href="/" className="rounded-md px-3 py-2 hover:bg-gray-200">
+            <Link
+              href="/"
+              className={`rounded-md px-3 py-2 hover:bg-gray-200 ${pathname === '/' ? 'bg-teal text-white hover:bg-teal' : 'bg-white text-black'}`}
+            >
               Home
             </Link>
-            <Link href="/about" className="rounded-md px-3 py-2 hover:bg-gray-200">
+            <Link
+              href="/about"
+              className={`rounded-md px-3 py-2 hover:bg-gray-200 ${pathname === '/about' ? 'bg-teal text-white hover:bg-teal' : 'bg-white text-black'}`}
+            >
               About me
             </Link>
-            <Link href="/blog" className="mr-2 rounded-md px-3 py-2 hover:bg-gray-200">
+            <Link
+              href="/blog"
+              className={`mr-2 rounded-md px-3 py-2 hover:bg-gray-200 ${pathname === '/blog' ? 'bg-teal text-white hover:bg-teal' : 'bg-white text-black'}`}
+            >
               Blog
             </Link>
           </div>
