@@ -21,7 +21,7 @@ function RootLayout({
         <header>
           <Navbar />
         </header>
-        <main className={inter.className}>{children}</main>
+        <main className={`${inter.className} p-2`}>{children}</main>
       </body>
     </html>
   );

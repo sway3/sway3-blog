@@ -3,8 +3,10 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import '../app/globals.css';
-import GithubIcon from '@/assets/icons/GithubIcon';
-import DarkMode from '@/assets/icons/DarkMode';
+import GithubIcon from '@/public/icons/GithubIcon';
+import DarkMode from '@/public/icons/DarkMode';
+import logo from '@/public/logo/logo.png';
+import Image from 'next/image';
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -12,17 +14,11 @@ export default function Navbar() {
   return (
     <nav className="border-b bg-white">
       <div className="flex h-16 items-center justify-between px-2">
-        <h1 className="text-3xl font-extrabold text-teal">
-          <Link href="/">sway3-dev</Link>
-        </h1>
         <div className="flex items-center">
-          <div className="border-r">
-            <Link
-              href="/"
-              className={`rounded-md px-3 py-2 hover:bg-gray-200 ${pathname === '/' ? 'bg-teal text-white hover:bg-teal' : 'bg-white text-black'}`}
-            >
-              Home
-            </Link>
+          <Link href="/">
+            <Image src={logo} alt="sway3" width={34} />
+          </Link>
+          <div className="ml-4">
             <Link
               href="/about"
               className={`rounded-md px-3 py-2 hover:bg-gray-200 ${pathname === '/about' ? 'bg-teal text-white hover:bg-teal' : 'bg-white text-black'}`}
@@ -36,6 +32,8 @@ export default function Navbar() {
               Blog
             </Link>
           </div>
+        </div>
+        <div className="flex items-center">
           <div className="ml-2 flex items-center">
             <Link href="https://github.com/sway3" target="_blank" className="px-3 py-2">
               <svg
